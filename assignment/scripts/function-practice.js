@@ -71,11 +71,11 @@ function find(value, array) {
   for (let item of array) {
     if (value === item) {
       return true;
-    } 
-    
+    }    
   }
   return false;
-}
+} //end find
+
 console.log('Value is found in array:', find(8, [4, 5, 6]));
 console.log('Value is found in array:', find('this value exists', ['this value exists']));
 console.log('Value is found in array:', find('this value exists', ['no it doesent']));
@@ -85,24 +85,51 @@ console.log('Value is found in array:', find('this value exists', ['no it doesen
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-
+  string = string.split('') //splits characters of string making each one an item in an array
+  if(string[0] === letter) {
+    return true;
+  } else {
+    return false;
+  }
 }
+console.log('The letter is the same as first leter in the string', isFirstLetter('a', 'about'));
+console.log('The letter is the same as first leter in the string', isFirstLetter('b', 'about'));
+console.log('The letter is the same as first leter in the string', isFirstLetter('A', 'about'));
 
 
 // 9. Function to return the sum of all numbers in an array
 function sumAll(array) {
   let sum = 0;
   // TODO: loop to add items
-
+  for(let item of array) {
+    sum = item + sum;
+  }
   // TODO: return the sum
+  return sum;
+  
 }
+console.log('The sum of the items in the array is', sumAll([1, 2, 5]));
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
-function allPositive() {
-
+function allPositive(inputArray) {
+  let returnArray = [];
+  for(let i of inputArray) {
+    if(i > 0) {
+      returnArray.push(i);
+    }    
+  }
+  console.log('Original input array:', inputArray); //check to see if input array is still the same
+  return returnArray;
+  
 }
+console.table(allPositive([1, 7, 12, -3, 18, -4]));
+console.table(allPositive([1, 7, 12, -3, 18, -4, 0])); //check where 0 goes
+console.table(allPositive([1, 7, 12, 3, 18, 4])); //no negatives
+console.log('no positives', allPositive([-1, -7, -12, -3, -18, -4])); //no positives
+console.table(allPositive([])); //empty array
+
 
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
