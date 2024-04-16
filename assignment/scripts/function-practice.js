@@ -121,8 +121,7 @@ function allPositive(inputArray) {
     }    
   }
   console.log('Original input array:', inputArray); //check to see if input array is still the same
-  return returnArray;
-  
+  return returnArray;  
 }
 console.table(allPositive([1, 7, 12, -3, 18, -4]));
 console.table(allPositive([1, 7, 12, -3, 18, -4, 0])); //check where 0 goes
